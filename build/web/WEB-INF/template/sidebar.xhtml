@@ -1,0 +1,40 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pm="http://primefaces.org/mirage">
+
+    <div class="layout-sidebar" style="width: 250px; display: flex; flex-direction: column;">
+
+        <div class="sidebar-logo" >
+            <p:graphicImage name="images/icono.png"/>
+            <h:outputText value="Mirage" styleClass="app-name" />
+        </div>
+
+        <div class="sidebar-logo" style="display: flex; align-items: left;">
+            <div class="menu-toggle" title="Toggle Menu" onclick="toggleMenu()">
+                <i class="pi pi-bars" style="cursor: pointer;"></i>
+            </div>
+            <a href="#" class="sidebar-pin" title="Toggle Menu">
+                <i class="pi pi-lock"/>
+            </a>
+        </div>
+
+
+        <div class="layout-menu-container">
+
+            <h:form id="menuform">
+                <pm:menu >
+
+                    <p:menuitem id="om_dashboard" value="Inicio" icon="pi pi-home" outcome="/inicio.xhtml"/>
+                    <p:menuitem value="Sucursales" icon="pi pi-building"  outcome="/catalogo/sucursal.xhtml" />
+                    <p:menuitem value="Empresas" icon="pi pi-briefcase"  outcome="/catalogo/empresa.xhtml"/>
+                    <p:menuitem id="om_login" value="Salir sesion Sesión" icon="pi pi-fw pi-sign-out" outcome="/login" />
+                </pm:menu>
+            </h:form>
+        </div>
+    </div>
+
+</ui:composition>

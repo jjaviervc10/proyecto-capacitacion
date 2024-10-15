@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <style>
+             #loading {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                display: none; /* Inicialmente oculto */
+            }
+        </style>
+    </h:head>
+    <h:form>
+      
+
+        <p:menubar>
+            <p:menuitem value="Menu" icon="pi pi-bars" /> 
+            <p:menuitem value="Inicio" icon="pi pi-home" 
+                        onclick="PF('loadingDialog').show(); window.location.href='#{request.contextPath}/inicio.xhtml'; return false;" />
+            <p:menuitem value="Sucursales" icon="pi pi-building" 
+                        onclick="PF('loadingDialog').show(); window.location.href='#{request.contextPath}/catalogo/sucursal.xhtml'; return false;" />
+            <p:menuitem value="Empresas" icon="pi pi-briefcase" 
+                        onclick="PF('loadingDialog').show(); window.location.href='#{request.contextPath}/catalogo/empresa.xhtml'; return false;" />
+        </p:menubar>
+    </h:form>
+
+</ui:composition>
